@@ -5,7 +5,7 @@
 const TALLES_ROPA = ['S', 'M', 'L'];
 const TALLES_CALZADO = ['36', '37', '38', '39', '40'];
 
-export const productos = [
+export const inventarioInicial = [
   {
     id: 1,
     nombre: 'Vestido Floral',
@@ -98,6 +98,7 @@ export const productos = [
   },
 ];
 
+export const productos = inventarioInicial;
 // Cada categoria muestra su producto destacado (igual que las paginas
 // remeras.html, vestidos.html, etc. del repositorio 1).
 export const categorias = [
