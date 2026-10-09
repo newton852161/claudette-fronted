@@ -1,0 +1,50 @@
+/* Hero */
+.ls-1 {
+  letter-spacing: 2px;
+}
+
+.hero-img {
+  min-height: 320px;
+  max-height: 520px;
+}
+
+/* Categorias */
+.img-categoria {
+  width: 150px;
+  height: 150px;
+  border: 5px solid var(--rosa-claro);
+  transition: transform 0.3s;
+}
+
+.categoria:hover .img-categoria {
+  transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .img-categoria {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Destacados */
+.link-ver {
+  color: var(--bordo);
+}
+
+.link-ver:hover {
+  color: var(--rosa);
+}
+
+.card-producto {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(111, 63, 70, 0.15) !important;
+}
+
+.card-producto .card-img-top {
+  height: 280px;
+}
