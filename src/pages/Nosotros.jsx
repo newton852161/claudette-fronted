@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ValorCard from "../components/ValorCard";
+import TendenciasTemporada from "../components/TendenciasTemporada";
 import { useEffect } from "react";
 
 const valores = [
@@ -40,6 +41,7 @@ function Nosotros() {
       metaDescripcion?.setAttribute("content", descripcionAnterior);
     };
   }, []);
+
   return (
     <main className="main-nosotros">
       <section className="py-5">
@@ -82,6 +84,8 @@ function Nosotros() {
           </Row>
         </Container>
       </section>
+
+      <TendenciasTemporada />
 
       <section className="py-5 text-center">
         <Container>
