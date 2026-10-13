@@ -113,3 +113,8 @@
   background-color: var(--rosa-claro);
   border: none;
 }
+
+.btn-ver-mas {
+  color: var(--bordo);
+  text-decoration: none;
+}

@@ -9,14 +9,17 @@ const valores = [
   {
     titulo: "Calidad",
     texto: "Seleccionamos cada prenda pensando en durabilidad y estilo.",
+    detalle: "Trabajamos con proveedores de confianza y revisamos cada prenda antes de publicarla, para que lo que ves en la foto sea lo que recibís.",
   },
   {
     titulo: "Cercanía",
     texto: "Atención personalizada, como siempre lo hicimos por Instagram.",
+    detalle: "Respondemos por WhatsApp e Instagram el mismo día y te ayudamos a elegir talle o color si tenés dudas antes de comprar.",
   },
   {
     titulo: "Compromiso",
     texto: "Trabajamos para que cada clienta se sienta cómoda y bien atendida.",
+    detalle: "Si algo no te queda bien, tenés 30 días para cambiarlo. Tu comodidad es lo primero.",
   },
 ];
 
@@ -73,7 +76,7 @@ function Nosotros() {
           <Row className="g-4">
             {valores.map((valor) => (
               <Col md={4} key={valor.titulo}>
-                <ValorCard titulo={valor.titulo} texto={valor.texto} />
+                <ValorCard titulo={valor.titulo} texto={valor.texto} detalle={valor.detalle} />
               </Col>
             ))}
           </Row>
