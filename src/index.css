@@ -1,111 +1,115 @@
+/* Estilos globales de Claudette (migrados de css/custom.css del repositorio 1) */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --rosa: #c58b8b;
+  --rosa-claro: #f6eeee;
+  --beige: #f8f4ef;
+  --bordo: #6f3f46;
+  --marron: #4a3b3b;
+  --gris: #777777;
+  --blanco: #ffffff;
+  --borde: #e5dada;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --bs-body-color: var(--marron);
+  --bs-body-font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-border-color: var(--borde);
+  --bs-border-radius-lg: 12px;
+  --bs-link-color: var(--bordo);
+  --bs-link-color-rgb: 111, 63, 70;
+  --bs-link-hover-color: var(--rosa);
+  --bs-link-hover-color-rgb: 197, 139, 139;
+  --bs-secondary-color: #6f6666;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* Tipografias */
+.titulo,
+.navbar-brand {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: 0.5px;
 }
 
-body {
-  margin: 0;
+/* Utilidades de color propias */
+.text-bordo { color: var(--bordo) !important; }
+.text-rosa { color: var(--rosa) !important; }
+.bg-beige { background-color: var(--beige) !important; }
+.bg-rosa-claro { background-color: var(--rosa-claro) !important; }
+.bg-marron { background-color: var(--marron) !important; }
+
+/* Botones */
+.btn {
+  --bs-btn-font-weight: 500;
+  --bs-btn-border-radius: 6px;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bordo);
+  --bs-btn-border-color: var(--bordo);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--rosa);
+  --bs-btn-hover-border-color: var(--rosa);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--rosa);
+  --bs-btn-active-border-color: var(--rosa);
+  --bs-btn-disabled-bg: var(--bordo);
+  --bs-btn-disabled-border-color: var(--bordo);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.btn-outline-primary {
+  --bs-btn-color: var(--bordo);
+  --bs-btn-border-color: var(--bordo);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--bordo);
+  --bs-btn-hover-border-color: var(--bordo);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--bordo);
+  --bs-btn-active-border-color: var(--bordo);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(197, 139, 139, 0.4);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* Navbar */
+.navbar .nav-link {
+  color: var(--marron);
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+  color: var(--rosa);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(197, 139, 139, 0.35);
+}
+
+/* Formularios */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--rosa);
+  box-shadow: 0 0 0 0.2rem rgba(197, 139, 139, 0.25);
+}
+
+/* Footer */
+.link-footer {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link-footer:hover,
+.link-footer:focus {
+  color: var(--rosa);
+}
+
+/* Nosotros */
+.valores-marca .card {
+  background-color: var(--rosa-claro);
+  border: none;
 }
