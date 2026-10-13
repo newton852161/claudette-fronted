@@ -1,41 +1,115 @@
-:root {
-  font: 18px/145% system-ui, 'Segoe UI', Roboto, sans-serif;
-  color-scheme: light dark;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-}
+/* Estilos globales de Claudette (migrados de css/custom.css del repositorio 1) */
 
 :root {
-    --bordo: #6f3f46;
-    --rosa: #c58b8b;
-    --rosa-claro: #f6eeee;
-    --blanco: #ffffff;
-    --marron: #4a3b3b;
-    --gris: #777777;
+  --rosa: #c58b8b;
+  --rosa-claro: #f6eeee;
+  --beige: #f8f4ef;
+  --bordo: #6f3f46;
+  --marron: #4a3b3b;
+  --gris: #777777;
+  --blanco: #ffffff;
+  --borde: #e5dada;
+
+  --bs-body-color: var(--marron);
+  --bs-body-font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-border-color: var(--borde);
+  --bs-border-radius-lg: 12px;
+  --bs-link-color: var(--bordo);
+  --bs-link-color-rgb: 111, 63, 70;
+  --bs-link-hover-color: var(--rosa);
+  --bs-link-hover-color-rgb: 197, 139, 139;
+  --bs-secondary-color: #6f6666;
+  color-scheme: light;
 }
 
-.titulo {
-    font-family: 'Playfair Display', serif;
-    color: var(--bordo);
+/* Tipografias */
+.titulo,
+.navbar-brand {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: 0.5px;
 }
 
-.valores-marca .card {
-    background-color: var(--rosa-claro);
-    border: none;
+/* Utilidades de color propias */
+.text-bordo { color: var(--bordo) !important; }
+.text-rosa { color: var(--rosa) !important; }
+.bg-beige { background-color: var(--beige) !important; }
+.bg-rosa-claro { background-color: var(--rosa-claro) !important; }
+.bg-marron { background-color: var(--marron) !important; }
+
+/* Botones */
+.btn {
+  --bs-btn-font-weight: 500;
+  --bs-btn-border-radius: 6px;
 }
 
 .btn-primary {
-    background-color: var(--bordo);
-    border-color: var(--bordo);
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bordo);
+  --bs-btn-border-color: var(--bordo);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--rosa);
+  --bs-btn-hover-border-color: var(--rosa);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--rosa);
+  --bs-btn-active-border-color: var(--rosa);
+  --bs-btn-disabled-bg: var(--bordo);
+  --bs-btn-disabled-border-color: var(--bordo);
 }
 
-.btn-primary:hover {
-    background-color: var(--rosa);
-    border-color: var(--rosa);
+.btn-outline-primary {
+  --bs-btn-color: var(--bordo);
+  --bs-btn-border-color: var(--bordo);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--bordo);
+  --bs-btn-hover-border-color: var(--bordo);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--bordo);
+  --bs-btn-active-border-color: var(--bordo);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(197, 139, 139, 0.4);
+}
+
+/* Navbar */
+.navbar .nav-link {
+  color: var(--marron);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+  color: var(--rosa);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(197, 139, 139, 0.35);
+}
+
+/* Formularios */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--rosa);
+  box-shadow: 0 0 0 0.2rem rgba(197, 139, 139, 0.25);
+}
+
+/* Footer */
+.link-footer {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link-footer:hover,
+.link-footer:focus {
+  color: var(--rosa);
+}
+
+/* Nosotros */
+.valores-marca .card {
+  background-color: var(--rosa-claro);
+  border: none;
 }

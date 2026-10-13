@@ -1,0 +1,4 @@
+/* Formulario */
+.form-control::placeholder {
+  color: #b5aaaa;
+}
