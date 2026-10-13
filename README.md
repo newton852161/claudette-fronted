@@ -80,4 +80,4 @@ claudette-fronted/
 - Alvaro Santillán
 - Desiree Sanchez
 - Patricio Yuretic
-- Ignacio (Nachoide)
+- Paez Ignacio
