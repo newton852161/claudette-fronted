@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import EncabezadoCatalogo from '../components/catalogo/EncabezadoCatalogo'
 import CategoriasAcordeon from '../components/catalogo/CategoriasAcordeon'
 import GrillaProductos from '../components/catalogo/GrillaProductos'
@@ -5,6 +6,23 @@ import { productos } from '../data/productos'
 
 function Catalogo() {
   const destacados = productos.slice(0, 6)
+
+  useEffect(() => {
+    const metaDescripcion = document.querySelector('meta[name="description"]')
+    const tituloAnterior = document.title
+    const descripcionAnterior = metaDescripcion?.getAttribute('content')
+
+    document.title = 'Catálogo | Claudette - Ropa y accesorios de mujer'
+    metaDescripcion?.setAttribute(
+      'content',
+      'Mirá el catálogo de Claudette: vestidos, remeras, pantalones, abrigos y calzado de mujer en San Miguel de Tucumán.',
+    )
+
+    return () => {
+      document.title = tituloAnterior
+      metaDescripcion?.setAttribute('content', descripcionAnterior)
+    }
+  }, [])
 
   return (
     <main>
