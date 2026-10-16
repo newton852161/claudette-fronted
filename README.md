@@ -6,7 +6,7 @@ Este es el **Repositorio N.º 2**: la migración a **React + Vite** del proyecto
 
 ## Funcionalidades
 
-- **Catálogo** (`/catalogo`): listado de productos destacados con acceso a las categorías y al detalle de cada producto.
+- **Catálogo** (`/catalogo`): listado de productos con buscador, filtro por categoría (que se recuerda al volver) y acceso al detalle de cada producto.
 - **Detalle de producto** (`/producto/:id`): foto, precio, descripción, selector de talle y cantidad, total calculado en vivo y botón de consulta por WhatsApp con el pedido ya escrito.
 - **Categorías** (`/categoria/:categoria`): remeras, vestidos, pantalones, abrigos y calzado, cada una con su producto destacado.
 - **Validación de talle**: no se puede consultar sin elegir un talle.

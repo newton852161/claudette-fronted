@@ -1,11 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import EncabezadoCatalogo from '../components/catalogo/EncabezadoCatalogo'
 import CategoriasAcordeon from '../components/catalogo/CategoriasAcordeon'
+import FiltrosCatalogo from '../components/catalogo/FiltrosCatalogo'
 import GrillaProductos from '../components/catalogo/GrillaProductos'
-import { productos } from '../data/productos'
+import { categorias, productos } from '../data/productos'
+
+const CLAVE_FILTRO = 'claudette_categoria_catalogo'
+
+function leerCategoriaGuardada() {
+  const guardada = localStorage.getItem(CLAVE_FILTRO)
+  const existe = categorias.some((categoria) => categoria.slug === guardada)
+  return existe ? guardada : 'todas'
+}
 
 function Catalogo() {
-  const destacados = productos.slice(0, 6)
+  const [categoriaActiva, setCategoriaActiva] = useState(leerCategoriaGuardada)
+  const [busqueda, setBusqueda] = useState('')
 
   useEffect(() => {
     const metaDescripcion = document.querySelector('meta[name="description"]')
@@ -24,6 +34,19 @@ function Catalogo() {
     }
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem(CLAVE_FILTRO, categoriaActiva)
+  }, [categoriaActiva])
+
+  const productosFiltrados = productos.filter((producto) => {
+    const coincideCategoria =
+      categoriaActiva === 'todas' || producto.categoria === categoriaActiva
+    const coincideBusqueda = producto.nombre
+      .toLowerCase()
+      .includes(busqueda.trim().toLowerCase())
+    return coincideCategoria && coincideBusqueda
+  })
+
   return (
     <main>
       <EncabezadoCatalogo
@@ -37,13 +60,26 @@ function Catalogo() {
         </div>
 
         <div className="text-center mb-4">
-          <h2 className="titulo fw-bold text-bordo mb-1">Productos destacados</h2>
+          <h2 className="titulo fw-bold text-bordo mb-1">Nuestros productos</h2>
           <p className="text-secondary mb-0">
-            Mostrando {destacados.length} productos
+            Mostrando {productosFiltrados.length} productos
           </p>
         </div>
 
-        <GrillaProductos productos={destacados} />
+        <FiltrosCatalogo
+          categoriaActiva={categoriaActiva}
+          onCambiarCategoria={setCategoriaActiva}
+          busqueda={busqueda}
+          onCambiarBusqueda={setBusqueda}
+        />
+
+        {productosFiltrados.length > 0 ? (
+          <GrillaProductos productos={productosFiltrados} />
+        ) : (
+          <p className="text-center text-secondary py-5">
+            No encontramos productos con esa búsqueda.
+          </p>
+        )}
       </section>
     </main>
   )
