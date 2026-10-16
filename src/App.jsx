@@ -56,7 +56,8 @@ import Login from './pages/admin/Login';
 import ProductosAdmin from './pages/admin/ProductosAdmin';
 import ProductoForm from './pages/admin/ProductoForm';
 import Clientes from './pages/admin/Clientes';
-import ProtectedRoute from './components/ProtectedRoute'; // <-- Importas tu protección
+import ProtectedRoute from './components/ProtectedRoute';
+import Catalogo from './pages/Catalogo';
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Inicio />} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/producto/:id" element={<Producto />} />
           <Route path="/categoria/:categoria" element={<Categoria />} />
           <Route path="*" element={<NoEncontrado />} />

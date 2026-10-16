@@ -6,6 +6,7 @@ Este es el **Repositorio N.º 2**: la migración a **React + Vite** del proyecto
 
 ## Funcionalidades
 
+- **Catálogo** (`/catalogo`): listado de productos con buscador, filtro por categoría (que se recuerda al volver) y acceso al detalle de cada producto.
 - **Detalle de producto** (`/producto/:id`): foto, precio, descripción, selector de talle y cantidad, total calculado en vivo y botón de consulta por WhatsApp con el pedido ya escrito.
 - **Categorías** (`/categoria/:categoria`): remeras, vestidos, pantalones, abrigos y calzado, cada una con su producto destacado.
 - **Validación de talle**: no se puede consultar sin elegir un talle.
@@ -45,6 +46,7 @@ Después abrir en el navegador la dirección que muestra la terminal (por defect
 
 | Ruta | Página |
 |---|---|
+| `/catalogo` | Catálogo de productos |
 | `/nosotros` | Nosotros |
 | `/producto/:id` | Detalle de un producto (ids del 1 al 10) |
 | `/categoria/:categoria` | `remeras`, `vestidos`, `pantalones`, `abrigos`, `calzados` |
@@ -58,6 +60,7 @@ claudette-fronted/
 │   └── img/              # Imágenes (ui, productos, local)
 ├── src/
 │   ├── components/       # Componentes reutilizables
+│   │   ├── catalogo/     # Piezas del catálogo
 │   │   ├── producto/     # Piezas del detalle de producto
 │   │   ├── BarraNavegacion.jsx
 │   │   ├── PiePagina.jsx
