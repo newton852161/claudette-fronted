@@ -3,6 +3,7 @@ import EncabezadoCatalogo from '../components/catalogo/EncabezadoCatalogo'
 import CategoriasAcordeon from '../components/catalogo/CategoriasAcordeon'
 import FiltrosCatalogo from '../components/catalogo/FiltrosCatalogo'
 import GrillaProductos from '../components/catalogo/GrillaProductos'
+import TendenciasTemporada from "../components/TendenciasTemporada";
 import { categorias, productos } from '../data/productos'
 
 const CLAVE_FILTRO = 'claudette_categoria_catalogo'
@@ -81,6 +82,7 @@ function Catalogo() {
           </p>
         )}
       </section>
+      <TendenciasTemporada />
     </main>
   )
 }
