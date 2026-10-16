@@ -3,6 +3,7 @@ import EncabezadoCatalogo from '../components/catalogo/EncabezadoCatalogo'
 import CategoriasAcordeon from '../components/catalogo/CategoriasAcordeon'
 import FiltrosCatalogo from '../components/catalogo/FiltrosCatalogo'
 import GrillaProductos from '../components/catalogo/GrillaProductos'
+import TendenciasTemporada from "../components/TendenciasTemporada";
 import { categorias, productos } from '../data/productos'
 
 const CLAVE_FILTRO = 'claudette_categoria_catalogo'
@@ -80,6 +81,19 @@ function Catalogo() {
             No encontramos productos con esa búsqueda.
           </p>
         )}
+      </section>
+      <TendenciasTemporada />
+      <section className="py-5 text-center">
+        <Container>
+          <h2 className="titulo text-bordo mb-3">¿Querés conocernos más?</h2>
+          <p className="mb-4">
+            Seguinos en nuestras redes o escribinos directamente, estamos para
+            ayudarte a encontrar tu estilo.
+          </p>
+          <Button variant="primary" size="lg" href="#contactos">
+            Contactanos
+          </Button>
+        </Container>
       </section>
     </main>
   )

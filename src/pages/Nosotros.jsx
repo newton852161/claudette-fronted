@@ -3,7 +3,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ValorCard from "../components/ValorCard";
-import TendenciasTemporada from "../components/TendenciasTemporada";
 import { useEffect } from "react";
 
 const valores = [
@@ -84,21 +83,7 @@ function Nosotros() {
           </Row>
         </Container>
       </section>
-
-      <TendenciasTemporada />
-
-      <section className="py-5 text-center">
-        <Container>
-          <h2 className="titulo text-bordo mb-3">¿Querés conocernos más?</h2>
-          <p className="mb-4">
-            Seguinos en nuestras redes o escribinos directamente, estamos para
-            ayudarte a encontrar tu estilo.
-          </p>
-          <Button variant="primary" size="lg" href="#contactos">
-            Contactanos
-          </Button>
-        </Container>
-      </section>
+      
     </main>
   );
 }
