@@ -4,6 +4,8 @@ import CategoriasAcordeon from '../components/catalogo/CategoriasAcordeon'
 import FiltrosCatalogo from '../components/catalogo/FiltrosCatalogo'
 import GrillaProductos from '../components/catalogo/GrillaProductos'
 import TendenciasTemporada from "../components/TendenciasTemporada";
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
 import { categorias, productos } from '../data/productos'
 
 const CLAVE_FILTRO = 'claudette_categoria_catalogo'
